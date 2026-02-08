@@ -7,11 +7,33 @@
 #include <algorithm>
 using namespace std;
 
-
 int main() {
-    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    int q;
+    cin >> q;
+
+    map<string, int> m;
+
+    while(q--) {
+        int type;
+        cin >> type;
+
+        if(type == 1) {
+            string name;
+            int marks;
+            cin >> name >> marks;
+            m[name] += marks;   // otomatis 0 kalau belum ada
+        }
+        else if(type == 2) {
+            string name;
+            cin >> name;
+            m.erase(name);
+        }
+        else if(type == 3) {
+            string name;
+            cin >> name;
+            cout << m[name] << endl;  // kalau tidak ada 0
+        }
+    }
+
     return 0;
 }
-
-
-
